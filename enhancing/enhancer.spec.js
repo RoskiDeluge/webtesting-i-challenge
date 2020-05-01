@@ -14,10 +14,13 @@ describe('enhancing system', () => {
         });
         it('increases enhancement by 1 up to 20, durability is unchanged', () => {
             const item = {
-                durability: 50,
                 enhancement: 15
             }
+            const item2 = {
+                enhancement: 20
+            }
             expect(succeed(item).enhancement).toBe(16)
+            expect(succeed(item2).enhancement).toBe(20)
         });
         it.todo('decreases durability by 5 if enhancement < 15; by 10 if enhancement is > 15')
     })
