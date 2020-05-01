@@ -36,11 +36,11 @@ describe('enhancing system', () => {
                 durability: 20
             }
             const item3 = {
-                enhancement: 17
+                enhancement: 19
             }
             expect(fail(item).durability).toBe(75)
-            expect(fail(item2).durability).toBe(5)
-            expect(fail(item3).enhancement).toBe(16)
+            expect(fail(item2).durability).toBe(10)
+            expect(fail(item3).enhancement).toBe(18)
         });
-    });
+    }); 
 });
