@@ -12,7 +12,9 @@ describe('enhancing system', () => {
             expect(repair(item).durability).toBe(100)
             expect(repair(item2).durability).toBe(100)       
         });
-        it('increases enhancement by 1 up to 20, durability is unchanged', () => {
+    });
+    describe('succeed()', () => {
+        it('should increase enhancement by 1 up to 20, durability is unchanged', () => {
             const item = {
                 enhancement: 15
             }
@@ -22,6 +24,23 @@ describe('enhancing system', () => {
             expect(succeed(item).enhancement).toBe(16)
             expect(succeed(item2).enhancement).toBe(20)
         });
-        it.todo('decreases durability by 5 if enhancement < 15; by 10 if enhancement is > 15')
-    })
-})
+    });
+    describe('fail()', () => {
+        it('should decrease durability and enhancment', () => {
+            const item = {
+                enhancement: 14,
+                durability: 80
+            }
+            const item2 = {
+                enhancement: 15,
+                durability: 20
+            }
+            const item3 = {
+                enhancement: 17
+            }
+            expect(fail(item).durability).toBe(75)
+            expect(fail(item2).durability).toBe(5)
+            expect(fail(item3).enhancement).toBe(16)
+        });
+    });
+});
